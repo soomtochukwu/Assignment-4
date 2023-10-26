@@ -1,0 +1,30 @@
+
+.Main{
+    /* width: fit-content; */
+    text-align: center;
+}
+
+.Main > * {
+    border-spacing: 1em;
+    width: inherit;
+}
+
+.tab{
+}
+
+.tab-title{
+}
+
+.tab-title > *{
+    padding: 1em;
+    margin: 1em;
+    cursor: pointer;
+    background-color: rgba(0,0,0, 0);
+    border: 0;
+}
+
+.tab-title > *:hover{
+    border-radius: 1em;
+    background-color: rgba(0,100,0, .5);
+    font-size: 1em;
+}

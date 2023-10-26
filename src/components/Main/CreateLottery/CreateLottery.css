@@ -1,0 +1,14 @@
+.lottery-inputs > *{
+    margin: 1em;
+    padding: 1em;
+    border-radius: 1em;
+    border: 0;
+    background-color: rgba(0, 100, 0, .5);
+}
+
+.lottery-inputs > *:hover{
+    background-color: rgba(0, 100, 0, .7);
+}
+.lottery-inputs > *:focus{
+    background-color: rgba(0, 100, 0, .7);
+}

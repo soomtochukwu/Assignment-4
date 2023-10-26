@@ -1,3 +1,9 @@
 .title{
-    color: green;
+    color: white;
+    font-family: tahoma;
+    padding: 1em;
+    position: fixed;
+    top: -1em;
+    width: inherit;
+    font-size: calc(1em + 1.5vw);
 }
