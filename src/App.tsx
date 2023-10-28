@@ -1,5 +1,6 @@
 import { ethers } from "ethers";
 import BUNN_ICO_ABI from "./assets/BUNN_ICO_ABI.json";
+import { Web3Provider } from "@ethersproject/providers";
 
 import { SetStateAction, useState } from "react";
 import { Main } from "./components/Main/Main";
@@ -16,7 +17,7 @@ import { Contract } from "ethers";
 function App() {
   const [account, setAccount] = useState(null),
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    [provider, setProvider] = useState<BrowserProvider>(),
+    [provider, setProvider] = useState<Web3Provider>(),
     [buttonText, setButtonText] = useState("Connect Wallet"),
     [contractAddress, setContractAddress] = useState<string>(null),
     [contract, setContract] = useState<Contract>(),
