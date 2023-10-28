@@ -1,6 +1,5 @@
 import { ethers } from "ethers";
 import BUNN_ICO_ABI from "./assets/BUNN_ICO_ABI.json";
-import { Web3Provider } from "@ethersproject/providers";
 
 import { SetStateAction, useState } from "react";
 import { Main } from "./components/Main/Main";
