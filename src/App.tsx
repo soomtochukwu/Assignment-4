@@ -17,9 +17,9 @@ import { Contract } from "ethers";
 function App() {
   const [account, setAccount] = useState(null),
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    [provider, setProvider] = useState<Web3Provider>(),
+    [provider, setProvider] = useState<unknown>(),
     [buttonText, setButtonText] = useState("Connect Wallet"),
-    [contractAddress, setContractAddress] = useState<string>(null),
+    [contractAddress, setContractAddress] = useState<string>(""),
     [contract, setContract] = useState<Contract>(),
     [balance, setBalance] = useState(null),
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -37,7 +37,7 @@ function App() {
 
       const _provider = new ethers.providers.Web3Provider(window.ethereum);
 
-      setSigner(provider?.getSigner());
+      setSigner(_provider?.getSigner());
 
       const _contract = new ethers.Contract(
         contractAddress,
