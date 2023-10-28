@@ -1,5 +1,6 @@
 import { ethers } from "ethers";
 import BUNN_ICO_ABI from "./assets/BUNN_ICO_ABI.json";
+import ErrorBoundary from "./ErrorBoundary";
 
 import { SetStateAction, useState } from "react";
 import { Main } from "./components/Main/Main";
@@ -24,8 +25,10 @@ function App() {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     [signer, setSigner] = useState<any>(),
     connect = async () => {
+      // eslint-disable-next-line
       window.ethereum
-        ? await window.ethereum
+        ? // eslint-disable-next-line
+          await window.ethereum
             .request({ method: "eth_requestAccounts" })
             .then((result: SetStateAction<null>[]) => {
               accountChangedHandler(result[0]);
@@ -33,7 +36,7 @@ function App() {
         : alert("install An Ethereum Wallet");
 
       setContractAddress("0x846C9D65404B5325163f2850DAcF7C3Dff9ef0B2");
-
+      // eslint-disable-next-line
       const _provider = new ethers.providers.Web3Provider(window.ethereum);
 
       setSigner(_provider?.getSigner());
@@ -55,6 +58,7 @@ function App() {
       setButtonText(String(account));
     },
     getBal = async () => {
+      // eslint-disable-next-line
       const b = await contract.totalSupply();
       setBalance(b);
     },
