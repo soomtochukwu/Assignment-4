@@ -16,7 +16,7 @@ import { Contract } from "ethers";
 function App() {
   const [account, setAccount] = useState(null),
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    [provider, setProvider] = useState<unknown>(),
+    [, setProvider] = useState<unknown>(),
     [buttonText, setButtonText] = useState("Connect Wallet"),
     [contractAddress, setContractAddress] = useState<string>(""),
     [contract, setContract] = useState<Contract>(),
