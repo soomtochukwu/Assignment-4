@@ -1,13 +1,22 @@
 
-.button{
+.connectWallet .button{
     padding: 1em;
     font-size: calc(.5em + .5vw);
     background-color: darkgreen;
+    border: 0;
     color: white;
     border-radius: 1em;
 }
 
 
-.button:hover{
-    font-size: 1em;
+.connectWallet .button:hover{
+    background-color: rgb(18, 68, 18);
+}
+
+.connectWallet .button:last-of-type{
+    background-color: rgb(24, 87, 24);
+}
+
+.connectWallet .button:last-of-type:hover{
+    background-color: rgb(18, 68, 18);
 }

@@ -1,18 +1,35 @@
-import { FC } from "react";
+import "./Connectwallet.css";
 
 interface ConnectWalletProps {
   connectWallet: () => Promise<void>;
+  logout: () => Promise<void>;
+  buttonText: string;
+  account: null;
 }
 
-const ConnectWallet: FC<ConnectWalletProps> = ({ connectWallet }) => {
+const ConnectWallet = ({
+  connectWallet,
+  logout,
+  buttonText,
+  account,
+}: ConnectWalletProps) => {
   return (
-    <div>
+    <div className="connectWallet">
       <button
         onClick={connectWallet}
         className="connectWallet button px-5 py-3 text-white bg-blue-500 rounded-md"
       >
-        Connect Wallet
+        {buttonText}
       </button>
+
+      {account ? (
+        <button
+          onClick={logout}
+          className="connectWallet button px-5 py-3 text-white bg-blue-500 rounded-md"
+        >
+          disconnect
+        </button>
+      ) : null}
     </div>
   );
 };

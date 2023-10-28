@@ -2,6 +2,9 @@
   transition: .3s;
   transform: .3s;
 }
+.button{
+cursor: pointer;
+}
 
 .body{
   /* border: 3px solid black; */
@@ -12,10 +15,17 @@
   /* border-spacing: 1em; */
   display: table;
 }
+
 .connectWallet{
   position: fixed;
   right: 1em;
   top: 1em;
+  /* display: block; */
+}
+
+.connectWallet > *{
+  padding: 1em;
+  margin: 0;
 }
 
 .Sidebar{
