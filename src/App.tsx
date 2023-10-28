@@ -24,9 +24,11 @@ function App() {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     [signer, setSigner] = useState<any>(),
     connect = async () => {
-      // eslint-disable-next-line
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       window.ethereum
-        ? // eslint-disable-next-line
+        ? // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-ignore
           await window.ethereum
             .request({ method: "eth_requestAccounts" })
             .then((result: SetStateAction<null>[]) => {
@@ -35,7 +37,8 @@ function App() {
         : alert("install An Ethereum Wallet");
 
       setContractAddress("0x846C9D65404B5325163f2850DAcF7C3Dff9ef0B2");
-      // eslint-disable-next-line
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       const _provider = new ethers.providers.Web3Provider(window.ethereum);
 
       setSigner(_provider?.getSigner());
@@ -57,7 +60,8 @@ function App() {
       setButtonText(String(account));
     },
     getBal = async () => {
-      // eslint-disable-next-line
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       const b = await contract.totalSupply();
       setBalance(b);
     },
