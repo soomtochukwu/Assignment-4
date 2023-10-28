@@ -1,5 +1,5 @@
 # BlockchainUNN_WEB3_Bootcamp_Assignment 4 - by Somtochukwu .K. Onwuajuese
-##### A simple React.JS App that makes it easier to interact with the BUNN_ICO contract I created earlier
+##### A simple React.JS App that makes it easier to interact with the BUNN_ICO contract I created during the last assignment
 
 ## Usage
 Setup the App after cloning with <code>npm i</code> command  
