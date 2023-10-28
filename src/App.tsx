@@ -9,14 +9,10 @@ import { Title } from "./components/Title/Title";
 import { Sidebar } from "./components/Sidebar/Sidebar";
 
 import "./App.css";
-import { BrowserProvider } from "ethers";
+// import { BrowserProvider } from "ethers";
 import { Contract } from "ethers";
 // import { ContractRunner } from "ethers";
 
-const ERC20_ABI = [
-  "function totalSupply() view returns (uint256)",
-  "event  Transfer(address indexed from, address indexed to, uint256)",
-];
 function App() {
   const [account, setAccount] = useState(null),
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
