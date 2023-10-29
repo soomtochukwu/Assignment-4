@@ -2,8 +2,18 @@
     color: white;
     font-family: tahoma;
     padding: 1em;
+    display: inline-flex;
     position: fixed;
     top: -1em;
     width: inherit;
-    font-size: calc(1em + 1.5vw);
+    font-size: calc(.7em + .5vw);
+}
+.menu{
+    top: -2em;
+    margin-right: 1em;
+    /* display: none; */
+    height: 2em;
+}
+.menu, .heading{
+    position: relative;
 }

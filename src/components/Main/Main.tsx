@@ -41,7 +41,7 @@ const Main = ({ account, getBalance, balance }: MainProps) => {
             value="tab2"
             onClick={log}
           >
-            Participant
+            Participate
           </Tabs.Trigger>
         </Tabs.List>
 

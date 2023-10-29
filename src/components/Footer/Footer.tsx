@@ -2,10 +2,18 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <pre className="footer">
-      BlockchainUNN WEB3 Bootcamp - Assignment 4 - by{" "}
-      <b>Somtochukwu .K. Onwuajuese</b>
-    </pre>
+    <code className="footer">
+      <a href="https://blockchainunn.org/" target="blanc">
+        BlockchainUNN
+      </a>{" "}
+      WEB3 Bootcamp - Assignment 4
+      <br />
+      ...as submitted by
+      <a href="https://linktr.ee/somtochukwu1" target="blanc">
+        {" "}
+        Somtochukwu .K. Onwuajuese
+      </a>
+    </code>
   );
 };
 

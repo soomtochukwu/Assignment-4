@@ -1,6 +1,6 @@
 const Participants = () => {
   return (
-    <div>
+    <div className="Participants">
       <input type="text" placeholder="Find Participants" />
       <ol>
         <li>participants</li>

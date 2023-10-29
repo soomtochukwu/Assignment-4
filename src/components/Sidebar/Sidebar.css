@@ -1,6 +1,12 @@
 .Sidebar{
-    width: fit-content;
+    /* width: 2em; */
     /* border: 2px solid cyan; */
-    background-color: green;
+    /* background-color: green; */
     /* opacity: .5; */
+}
+.Sidebar > * {
+    width: inherit;
+}
+.Sidebar > * >* {
+    /* width: inherit; */
 }

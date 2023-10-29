@@ -2,9 +2,12 @@ import "./Title.css";
 
 const Title = () => {
   return (
-    <h1 className="title">
-      <b>BlockchainUNN Lottery</b>
-    </h1>
+    <div className="title">
+      <button className="button menu">==</button>
+      <h1 className="heading">
+        <b>BlockchainUNN Lottery</b>
+      </h1>
+    </div>
   );
 };
 

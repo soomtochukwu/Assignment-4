@@ -1,6 +1,6 @@
 const Lotteries = () => {
   return (
-    <div>
+    <div className="Lotteries">
       <input type="text" placeholder="Seacrh For Lotteries" />
       <ol>
         <li>lottery</li>

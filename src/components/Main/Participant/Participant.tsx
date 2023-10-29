@@ -7,7 +7,7 @@ interface ParticipantProps {
 const Participant = ({ account, getBalance, balance }: ParticipantProps) => {
   return (
     <div>
-      <h2>{account}</h2>
+      <h4>{account}</h4>
       <form className="CreateLottery lottery-inputs">
         <input placeholder="Lottery ID" type="text" />
         <input type="submit" className="button" value="Participate" />

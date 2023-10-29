@@ -7,13 +7,12 @@ cursor: pointer;
 }
 
 .body{
-  /* border: 3px solid black; */
   width: 100vw;
   height: 100vh;
   margin: -1em;
   vertical-align: middle;
-  /* border-spacing: 1em; */
   display: table;
+  /* background-color: #002fff9a; */
 }
 
 .connectWallet{
@@ -48,13 +47,31 @@ cursor: pointer;
 
 .footer{
   position: fixed;
-  bottom: -1.2em;
-  width: 100vw;
+  bottom: 0;
+  width: inherit;
   text-align: center;
   padding: 1.5em;
-  left: 0;
+  left: 0em;
 }
 
-.title, .footer{
+.title, .footer, .Sidebar{
   background-color: rgb(0, 75, 0);
+}
+
+@media screen and (max-width: 500px) {
+  .Sidebar{
+    /* position: fixed; */
+    display: none;
+    /* display: none; */
+    background-color: red;
+  }
+  .menu {
+    display: block;
+    top: 1.5em;
+  }
+}
+
+.menu:hover ~ .Title{
+    display: none;
+    background-color: red;
 }
