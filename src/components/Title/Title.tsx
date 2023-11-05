@@ -5,7 +5,7 @@ const Title = () => {
     <div className="title">
       <button className="button menu">==</button>
       <h1 className="heading">
-        <b><a href="./">BlockchainUNN Lottery</a></b>
+        <b><a className="heading" href="./">BlockchainUNN Lottery</a></b>
       </h1>
     </div>
   );
