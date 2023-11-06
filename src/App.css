@@ -1,6 +1,6 @@
 *{
-  transition: .3s;
-  transform: .3s;
+  transition: .15s;
+  transform: .15s;
 }
 .button{
 cursor: pointer;
