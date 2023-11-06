@@ -4,11 +4,14 @@
 ## Usage
 Clone with 
 ```shell 
-git clone https://github.com/soomtochukwu/Assignment-4.git
+git clone https://github.com/soomtochukwu/Assignment-4.git Somtochukwu_K_Onwuajuese
 ```
 
 Setup with 
-```shell 
+```shell
+cd Somtochukwu_K_Onwuajuese
+```
+```shell
 npm i
 ```
  
