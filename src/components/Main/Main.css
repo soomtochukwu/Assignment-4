@@ -12,8 +12,9 @@
     border-radius: 1.25em;
     margin: 0 auto;
     padding: 1em;
-    box-shadow:-5px -5px 10px rgb(218, 218, 218),
-                            5px 5px 10px rgb(110, 110, 110)
+    border: 1px solid gray;
+    box-shadow:-5px -5px 12px 4px rgb(230, 230, 230),
+                            5px 5px 9px 4px rgb(100, 100, 100)
     ;
 }
 
