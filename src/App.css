@@ -1,7 +1,16 @@
+:root{
+  --footer-height: 100vh;
+  --title-top: -7em; 
+}
 *{
   transition: .15s;
   transform: .15s;
 }
+
+.title{
+  top: var(--title-top);
+}
+
 .button{
 cursor: pointer;
 }
@@ -49,6 +58,8 @@ cursor: pointer;
   position: fixed;
   bottom: 0;
   width: inherit;
+  height: var(--footer-height);
+  transition: .2s;
   text-align: center;
   padding: 1.5em;
   left: 0em;

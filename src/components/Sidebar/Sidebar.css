@@ -1,4 +1,9 @@
+:root{
+    --left-sidebar: -13em;
+}
 .Sidebar{
+    left: var(--left-sidebar);
+    position: relative;
 }
 .Sidebar > * {
     padding: 1em;

@@ -4,7 +4,6 @@
     padding: 1em;
     display: inline-flex;
     position: fixed;
-    top: -1em;
     width: inherit;
     font-size: calc(.7em + .5vw);
 }
