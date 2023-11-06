@@ -59,7 +59,7 @@ cursor: pointer;
   bottom: 0;
   width: inherit;
   height: var(--footer-height);
-  transition: .2s;
+  transition: .3s;
   text-align: center;
   padding: 1.5em;
   left: 0em;

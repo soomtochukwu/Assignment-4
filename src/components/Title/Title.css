@@ -2,7 +2,8 @@
     color: white;
     font-family: tahoma;
     padding: 1em;
-    display: inline-flex;
+  transition: .3s;
+  display: inline-flex;
     position: fixed;
     width: inherit;
     font-size: calc(.7em + .5vw);

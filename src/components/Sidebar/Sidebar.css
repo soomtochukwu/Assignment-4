@@ -2,7 +2,8 @@
     --left-sidebar: -13em;
 }
 .Sidebar{
-    left: var(--left-sidebar);
+  transition: .3s;
+  left: var(--left-sidebar);
     position: relative;
 }
 .Sidebar > * {
