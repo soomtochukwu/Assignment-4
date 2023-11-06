@@ -1,5 +1,5 @@
 # BlockchainUNN_WEB3_Bootcamp_Assignment 4 - by Somtochukwu .K. Onwuajuese
-##### A simple React.JS App that makes it easier to interact with the BUNN_ICO contract I created during the last assignment
+##### A simple React.JS App that makes it easier to interact with <a href="https://sepolia.etherscan.io/address/0x6094ccab2a4e2acb515a3f77bed9c2699fbe9107#code" target="bunn_lottery">BUNN_LOTTERY</a> contract I created.
 
 ## Usage
 Setup the App after cloning with <code>npm i</code> command  
