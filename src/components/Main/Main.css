@@ -9,7 +9,12 @@
 
 .tab{
     width: fit-content;
+    border-radius: 1.25em;
     margin: 0 auto;
+    padding: 1em;
+    box-shadow:-5px -5px 10px rgb(218, 218, 218),
+                            5px 5px 10px rgb(110, 110, 110)
+    ;
 }
 
 .tab-title{
@@ -20,12 +25,14 @@
     cursor: pointer;
     background-color: rgba(0,0,0, 0);
     border: 0;
-    border-bottom: 1px solid green;
+    border-bottom: 2px solid green;
 }
 
 .tab-title > *:hover{
     border-radius: 1.25em;
     /* background-color: rgba(0,100,0, .5); */
-    box-shadow:0px 2.5px green;
     font-size: 1em;
+}
+.tab-title > *:active{
+    border-top: 2px solid green;
 }
