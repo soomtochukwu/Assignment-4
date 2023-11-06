@@ -17,7 +17,6 @@
 
 .tab-title > *{
     padding: 1em;
-    margin: 1em;
     cursor: pointer;
     background-color: rgba(0,0,0, 0);
     border: 0;
@@ -25,7 +24,8 @@
 }
 
 .tab-title > *:hover{
-    border-radius: 1em;
+    border-radius: 1.25em;
     /* background-color: rgba(0,100,0, .5); */
+    box-shadow:0px 2.5px green;
     font-size: 1em;
 }
