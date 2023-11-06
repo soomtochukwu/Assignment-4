@@ -2,7 +2,19 @@
 ##### A simple React.JS App that makes it easier to interact with <a href="https://sepolia.etherscan.io/address/0x6094ccab2a4e2acb515a3f77bed9c2699fbe9107#code" target="blanc">BUNN_LOTTERY</a> contract I created.
 
 ## Usage
-Setup the App after cloning with <code>npm i</code> command  
-Start the app with <code>npm run dev</code> command
+Clone with 
+```shell 
+git clone https://github.com/soomtochukwu/Assignment-4.git
+```
+
+Setup with 
+```shell 
+npm i
+```
+ 
+Start the app with 
+```shell 
+npm run dev
+``` 
 <br>
-Connect your wallet and participate in one of the Loteries by specifying the respective <strong>Lottery ID</strong>
+Connect your wallet and participate in one of the Loteries by specifying the respective <strong>Lottery ID</strong> and clicking <strong>Participate</strong>
