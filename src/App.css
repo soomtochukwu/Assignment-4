@@ -1,10 +1,16 @@
 :root{
   --footer-height: 100vh;
   --title-top: -7em; 
+  --lottery-inputs-font: 0;
 }
 *{
   transition: .15s;
   transform: .15s;
+}
+
+.cursor-default, .Main{
+
+  font-size: var(--lottery-inputs-font);
 }
 
 .title{

@@ -9,4 +9,5 @@ setTimeout(() => {
     root.style.setProperty('--footer-height', "3em");
     root.style.setProperty('--title-top', "-1em");
     root.style.setProperty('--left-sidebar', "0");
+    root.style.setProperty('--lottery-inputs-font', "1em");
 }, 150)

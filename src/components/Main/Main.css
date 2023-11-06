@@ -1,15 +1,15 @@
 
 .Main{
-    /* width: fit-content; */
+    width: inherit;
     text-align: center;
 }
-
 .Main > * {
-    border-spacing: 1em;
-    width: inherit;
+    /* width: inherit; */
 }
 
 .tab{
+    width: fit-content;
+    margin: 0 auto;
 }
 
 .tab-title{
@@ -21,10 +21,11 @@
     cursor: pointer;
     background-color: rgba(0,0,0, 0);
     border: 0;
+    border-bottom: 1px solid green;
 }
 
 .tab-title > *:hover{
     border-radius: 1em;
-    background-color: rgba(0,100,0, .5);
+    /* background-color: rgba(0,100,0, .5); */
     font-size: 1em;
 }
