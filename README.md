@@ -19,6 +19,7 @@ Start the app with
 ```shell 
 npm run dev
 ``` 
-<code>then press "o"</code>
+<code>then press 'o' to launch</code>
+<br>
 <br>
 Connect your wallet and participate in one of the Loteries by specifying the respective <strong>Lottery ID</strong> and clicking <strong>Participate</strong>
