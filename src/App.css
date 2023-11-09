@@ -1,27 +1,30 @@
-:root{
+:root {
   --footer-height: 100vh;
-  --title-top: -7em; 
+  --title-top: -7em;
   --lottery-inputs-font: 0;
 }
-*{
+
+* {
   transition: .15s;
   transform: .15s;
 }
 
-.cursor-default, .Main{
+.cursor-default,
+.Main {
 
   font-size: var(--lottery-inputs-font);
 }
 
-.title{
+.title {
   top: var(--title-top);
 }
 
-.button{
-cursor: pointer;
+.button {
+  cursor: pointer;
 }
 
-.body{
+.body {
+  background-color: rgb(200, 215, 201);
   width: 100vw;
   height: 100vh;
   margin: -1em;
@@ -30,37 +33,39 @@ cursor: pointer;
   /* background-color: #002fff9a; */
 }
 
-.connectWallet{
+.connectWallet {
   position: fixed;
   right: 1em;
   top: 1em;
   /* display: block; */
 }
 
-.connectWallet > *{
+.connectWallet>* {
   padding: 1em;
   margin: 0;
 }
 
-.Sidebar{
+.Sidebar {
   /* margin: 1em; */
 }
-.Sidebar, .mainSection{
+
+.Sidebar,
+.mainSection {
   height: inherit;
   display: table-cell;
   vertical-align: middle;
 }
 
-.mainSection > *{
+.mainSection>* {
   /* margin: 0.5em; */
 }
 
-.mainSection{
+.mainSection {
   height: 100vh;
   width: 100%;
 }
 
-.footer{
+.footer {
   position: fixed;
   bottom: 0;
   width: inherit;
@@ -71,24 +76,27 @@ cursor: pointer;
   left: 0em;
 }
 
-.title, .footer, .Sidebar{
+.title,
+.footer,
+.Sidebar {
   background-color: rgb(0, 75, 0);
 }
 
 @media screen and (max-width: 500px) {
-  .Sidebar{
+  .Sidebar {
     /* position: fixed; */
     display: none;
     /* display: none; */
     background-color: red;
   }
+
   .menu {
     display: block;
     top: 1.5em;
   }
 }
 
-.menu:hover ~ .Title{
-    display: none;
-    background-color: red;
+.menu:hover~.Title {
+  display: none;
+  background-color: red;
 }

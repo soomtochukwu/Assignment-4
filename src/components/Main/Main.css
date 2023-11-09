@@ -1,39 +1,38 @@
-
-.Main{
+.Main {
     width: inherit;
     text-align: center;
 }
-.Main > * {
+
+.Main>* {
     /* width: inherit; */
 }
 
-.tab{
+.tab {
     width: fit-content;
     border-radius: 1.25em;
     margin: 0 auto;
     padding: 1em;
     border: 1px solid gray;
-    box-shadow:-5px -5px 12px 4px rgb(230, 230, 230),
-                            5px 5px 9px 4px rgb(100, 100, 100)
-    ;
+    box-shadow: -5px -5px 8px 0px rgb(230, 230, 230),
+        5px 5px 8px 0px rgb(100, 100, 100);
 }
 
-.tab-title{
-}
+.tab-title {}
 
-.tab-title > *{
+.tab-title>* {
     padding: 1em;
     cursor: pointer;
-    background-color: rgba(0,0,0, 0);
+    background-color: rgba(0, 0, 0, 0);
     border: 0;
     border-bottom: 2px solid green;
 }
 
-.tab-title > *:hover{
+.tab-title>*:hover {
     border-radius: 1.25em;
     /* background-color: rgba(0,100,0, .5); */
     font-size: 1em;
 }
-.tab-title > *:active{
+
+.tab-title>*:active {
     border-top: 2px solid green;
 }
