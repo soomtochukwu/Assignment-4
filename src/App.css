@@ -45,18 +45,12 @@
   margin: 0;
 }
 
-.Sidebar {
-  /* margin: 1em; */
-}
-
 .Sidebar,
 .mainSection {
   height: inherit;
   display: table-cell;
   vertical-align: middle;
 }
-
-.mainSection {}
 
 .mainSection {
   height: 100vh;
