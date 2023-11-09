@@ -56,9 +56,7 @@
   vertical-align: middle;
 }
 
-.mainSection>* {
-  /* margin: 0.5em; */
-}
+.mainSection {}
 
 .mainSection {
   height: 100vh;
