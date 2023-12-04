@@ -14,7 +14,7 @@ const Participant = ({ account, getOwner, owner, lotteryId_p, setLotteryId_p, pa
       <h4>{account}</h4>
       <div className="CreateLottery lottery-inputs">
         <input placeholder="Lottery ID" value={lotteryId_p} onInput={setLotteryId_p} type="number" />
-        <input type="submit" className="button" onClick={participate} value="Participate" />
+        <input type="submit" className="button" onChange={participate} value="Participate" />
       </div>
 
       <div>

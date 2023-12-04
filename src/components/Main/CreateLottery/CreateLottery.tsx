@@ -23,21 +23,21 @@ const CreateLottery = ({
         placeholder="Lottery ID"
         value={lotteryId}
         min={1}
-        onInput={setLotteryId}
+        onChange={setLotteryId}
         type="number"
       />
 
       <input
         placeholder="Lottery Name"
         /* value={Lottery_Name}
-        onInput={setName} */
+        onChange={setName} */
         type="text"
       />
 
       <input
         placeholder="No Of Participants"
         value={Lottery_noOfPart}
-        onInput={setNoOfPart}
+        onChange={setNoOfPart}
         min={2}
         type="number"
       />
