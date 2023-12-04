@@ -4,13 +4,23 @@ import { Participant } from "./Participant/Participant";
 import "./Main.css";
 
 interface MainProps {
-  createLottery: () => Promise<void>;
   account: string;
   getOwner: () => Promise<void>;
   owner: string;
+
+
+  createLottery: () => Promise<void>;
+  setLotteryId: () => Promise<void>;
+  setNoOfPart: () => Promise<void>;
+  lotteryId: number;
+  Lottery_noOfPart: number;
+
+  lotteryId_p: number;
+  setLotteryId_p: () => Promise<void>;
+  participate: () => Promise<void>;
 }
 
-const Main = ({ createLottery, account, getOwner, owner }: MainProps) => {
+const Main = ({ createLottery, account, getOwner, owner, setLotteryId, setNoOfPart, lotteryId, Lottery_noOfPart, lotteryId_p, setLotteryId_p, participate }: MainProps) => {
   const log = () => {
     console.log(account);
     console.log(typeof account);
@@ -51,7 +61,7 @@ const Main = ({ createLottery, account, getOwner, owner }: MainProps) => {
             className="grow  p-5 bg-white rounded-b-md outline-none focus:shadow-[0_0_0_2px] focus:shadow-black"
             value="tab1"
           >
-            <CreateLottery createLottery={createLottery} />
+            <CreateLottery createLottery={createLottery} setLotteryId={setLotteryId} setNoOfPart={setNoOfPart} lotteryId={lotteryId} Lottery_noOfPart={Lottery_noOfPart} />
           </Tabs.Content>
         ) : null}
 
@@ -63,6 +73,9 @@ const Main = ({ createLottery, account, getOwner, owner }: MainProps) => {
             account={account}
             getOwner={getOwner}
             owner={owner}
+            lotteryId_p={lotteryId_p}
+            setLotteryId_p={setLotteryId_p}
+            participate={participate}
           />
         </Tabs.Content>
       </Tabs.Root>

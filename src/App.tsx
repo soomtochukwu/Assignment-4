@@ -2,9 +2,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import { ethers } from "ethers";
 
-import { BrowserProvider, parseUnits } from "ethers";
 
-import { HDNodeWallet } from "ethers/wallet";
 import { useState } from "react";
 import { Main } from "./components/Main/Main";
 import { ConnectWallet } from "./components/Connectwallet/Connectwallet";
@@ -12,18 +10,20 @@ import { Footer } from "./components/Footer/Footer";
 import { Title } from "./components/Title/Title";
 import { Sidebar } from "./components/Sidebar/Sidebar";
 
-import { BUNN_ICO_ABI, BUNN_ICO_ADDRESS } from "./components/BUNN_ICO_ABI";
+import { BUNN_ICO_ABI, BUNN_ICO_ADDRESS } from "./components/store";
 
 import "./App.css";
 
 function App() {
   const [account, setAccount] = useState(""),
-    [provider, setProvider] = useState(""),
     [buttonText, setButtonText] = useState("Connect Wallet"),
     [contractAddress, setContractAddress] = useState(""),
     [contract, setContract] = useState<ethers.Contract>(),
     [owner, setOwner] = useState(""),
     [signer, setSigner] = useState<ethers.JsonRpcProvider>(),
+    [lotteryId, setLotteryIdValue] = useState(""),
+    [lotteryId_p, setLotteryIdValue_p] = useState(""),
+    [Lottery_noOfPart, setLottery_noOfPart] = useState(""),
     /* connect wallet */
     connect = async () => {
       let
@@ -68,7 +68,46 @@ function App() {
     },
     /* create lottery */
     createLottery = async () => {
+      const
+        // @ts-ignore
+        provider = new ethers.BrowserProvider(window.ethereum),
+        signer = await provider.getSigner(),
+        contract = new ethers.Contract(BUNN_ICO_ADDRESS, BUNN_ICO_ABI, signer),
+        lottery = await contract.createLottery(lotteryId, Lottery_noOfPart);
+      console.log(lottery);
+    },
 
+    // [Lottery_Name, setLottery_Name] = useState(""),
+
+    // @ts-ignore
+    setLotteryId = (event) => {
+      setLotteryIdValue(event.target.value);
+      console.log(lotteryId)
+    },
+    // @ts-ignore
+    setNoOfPart = (event) => {
+      setLottery_noOfPart(event.target.value)
+      console.log(Lottery_noOfPart)
+    }/* ,
+    // @ts-ignore
+    setName = (event) => {
+      setLottery_Name(event.target.value)
+      console.log(event.target.value)
+    } */
+    ,
+    // @ts-ignore
+    setLotteryId_p = async (event) => {
+      setLotteryIdValue_p(event.target.value)
+      console.log(lotteryId_p)
+    },
+    participate = async () => {
+      const
+        // @ts-ignore
+        provider = new ethers.BrowserProvider(window.ethereum),
+        signer = await provider.getSigner(),
+        contract = new ethers.Contract(BUNN_ICO_ADDRESS, BUNN_ICO_ABI, signer),
+        participation_tx = await contract.participate(lotteryId_p);
+      console.log(participation_tx);
     },
     // updateEthers = () => { },
     logout = async () => {
@@ -81,7 +120,9 @@ function App() {
       <Sidebar />
       <div className="mainSection">
         <Title />
-        <Main createLottery={createLottery} account={account} getOwner={getOwner} owner={owner} />
+        <Main createLottery={createLottery} account={account} getOwner={getOwner} owner={owner}
+          // @ts-ignore
+          setLotteryId={setLotteryId} setNoOfPart={setNoOfPart} lotteryId={lotteryId} Lottery_noOfPart={Lottery_noOfPart} lotteryId_p={lotteryId_p} setLotteryId_p={setLotteryId_p} participate={participate} />
         <ConnectWallet
           account={account}
           logout={logout}
