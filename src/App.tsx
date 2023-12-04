@@ -26,7 +26,6 @@ function App() {
       let
         signer: ethers.JsonRpcProvider,
         provider,
-        contract: ethers.Contract,
         account;
       // @ts-ignore
       if (window.ethereum == null) {
