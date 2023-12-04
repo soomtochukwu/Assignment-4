@@ -40,8 +40,6 @@ function App() {
 
         signer = await provider.getSigner();
 
-        contract = new ethers.Contract(BUNN_ICO_ADDRESS, BUNN_ICO_ABI, signer);
-
         // @ts-ignore
         account = await signer.getAddress()
         setAccount(account)
