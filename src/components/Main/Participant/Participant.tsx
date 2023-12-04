@@ -19,7 +19,7 @@ const Participant = ({ account, getOwner, owner, lotteryId_p, setLotteryId_p, pa
 
       <div>
         <pre id="val">{owner}</pre>
-        <button onClick={getOwner}>Get owner</button>
+        <button onClick={getOwner}>Admin</button>
       </div>
     </div>
   );
