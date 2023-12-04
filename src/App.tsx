@@ -17,10 +17,7 @@ import "./App.css";
 function App() {
   const [account, setAccount] = useState(""),
     [buttonText, setButtonText] = useState("Connect Wallet"),
-    [contractAddress, setContractAddress] = useState(""),
-    [contract, setContract] = useState<ethers.Contract>(),
     [owner, setOwner] = useState(""),
-    [signer, setSigner] = useState<ethers.JsonRpcProvider>(),
     [lotteryId, setLotteryIdValue] = useState(""),
     [lotteryId_p, setLotteryIdValue_p] = useState(""),
     [Lottery_noOfPart, setLottery_noOfPart] = useState(""),
@@ -42,16 +39,13 @@ function App() {
         // @ts-ignore
 
         signer = await provider.getSigner();
-        setSigner(signer);
 
         contract = new ethers.Contract(BUNN_ICO_ADDRESS, BUNN_ICO_ABI, signer);
-        setContract(contract);
 
         // @ts-ignore
         account = await signer.getAddress()
         setAccount(account)
 
-        setContractAddress(BUNN_ICO_ADDRESS);
         setButtonText(account)
 
       }
