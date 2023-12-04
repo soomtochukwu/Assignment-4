@@ -36,12 +36,15 @@ function App() {
         // @ts-ignore
         provider = new ethers.BrowserProvider(window.ethereum);
         // @ts-ignore
+
         signer = await provider.getSigner();
+
         // @ts-ignore
         account = await signer.getAddress()
+        setAccount(account)
 
-        setAccount(account);
-        setButtonText(account);
+        setButtonText(account)
+
       }
     },
     /* test call */
@@ -99,16 +102,8 @@ function App() {
     },
     // updateEthers = () => { },
     logout = async () => {
-      const
-        // @ts-ignore
-        provider = new ethers.BrowserProvider(window.ethereum);
-
       setAccount("");
       setButtonText("Connect Wallet");
-      // @ts-ignore
-      await window.ethereum.request({ method: 'eth_requestAccounts' });
-      // @ts-ignore
-      provider.resetEventsBlock(0)
     };
 
   return (
