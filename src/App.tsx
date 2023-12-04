@@ -1,67 +1,78 @@
-// import { BaseContract, ethers, providers } from "ethers";
-import { BUNN_ICO_ABI } from "./components/BUNN_ICO_ABI";
-import { SetStateAction, useState } from "react";
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+import { ethers } from "ethers";
+
+import { BrowserProvider, parseUnits } from "ethers";
+
+import { HDNodeWallet } from "ethers/wallet";
+import { useState } from "react";
 import { Main } from "./components/Main/Main";
 import { ConnectWallet } from "./components/Connectwallet/Connectwallet";
 import { Footer } from "./components/Footer/Footer";
 import { Title } from "./components/Title/Title";
 import { Sidebar } from "./components/Sidebar/Sidebar";
 
+import { BUNN_ICO_ABI, BUNN_ICO_ADDRESS } from "./components/BUNN_ICO_ABI";
+
 import "./App.css";
-// import { BrowserProvider } from "ethers";
-import { Contract, ethers } from "ethers";
-// import { ContractRunner } from "ethers";
 
 function App() {
-  const [account, setAccount] = useState(null),
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    [provider, setProvider] = useState<any>(),
+  const [account, setAccount] = useState(""),
+    [provider, setProvider] = useState(""),
     [buttonText, setButtonText] = useState("Connect Wallet"),
-    [contractAddress, setContractAddress] = useState<string>(""),
-    [contract, setContract] = useState<Contract>(),
-    [balance, setBalance] = useState(null),
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    [signer, setSigner] = useState<any>(),
+    [contractAddress, setContractAddress] = useState(""),
+    [contract, setContract] = useState<ethers.Contract>(),
+    [owner, setOwner] = useState(""),
+    [signer, setSigner] = useState<ethers.JsonRpcProvider>(),
+    /* connect wallet */
     connect = async () => {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      let
+        signer: ethers.JsonRpcProvider,
+        provider,
+        contract: ethers.Contract,
+        account;
       // @ts-ignore
-      window.ethereum
-        ? // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-          // @ts-ignore
-          await window.ethereum
-            .request({ method: "eth_requestAccounts" })
-            .then((result: SetStateAction<null>[]) => {
-              accountChangedHandler(result[0]);
-            })
-        : alert("install An Ethereum Wallet");
+      if (window.ethereum == null) {
+        console.log("MetaMask not installed; using read-only defaults");
+        // @ts-ignore
+        provider = ethers.getDefaultProvider();
+      } else {
+        // @ts-ignore
+        provider = new ethers.BrowserProvider(window.ethereum);
+        // @ts-ignore
 
-      setContractAddress("0x846C9D65404B5325163f2850DAcF7C3Dff9ef0B2");
-      setProvider(
-        new ethers.providers.JsonRpcProvider(
-          "https://eth-sepolia.g.alchemy.com/v2/uJ6VyGFM0IqVjGXqi0pjDyhbwpp7h58I"
-        )
-      );
+        signer = await provider.getSigner();
+        setSigner(signer);
 
-      setSigner(provider.getSigner());
+        contract = new ethers.Contract(BUNN_ICO_ADDRESS, BUNN_ICO_ABI, signer);
+        setContract(contract);
 
-      setContract(new Contract(contractAddress, BUNN_ICO_ABI, signer));
+        // @ts-ignore
+        account = await signer.getAddress()
+        setAccount(account)
 
-      console.log("contract", contract);
+        setContractAddress(BUNN_ICO_ADDRESS);
+        setButtonText(account)
 
-      // updateEthers();
+      }
     },
-    accountChangedHandler = (account: SetStateAction<null>) => {
-      setAccount(account);
-      setButtonText(String(account));
+    /* test call */
+    getOwner = async () => {
+      const
+        // @ts-ignore
+        provider = new ethers.BrowserProvider(window.ethereum),
+        contract = new ethers.Contract(BUNN_ICO_ADDRESS, BUNN_ICO_ABI, provider),
+        owner = await contract.owner();
+      // owner.wait();
+      setOwner(owner);
     },
-    getBal = async () => {
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
-      setBalance(await contract.totalSupply());
+    /* create lottery */
+    createLottery = async () => {
+
     },
     // updateEthers = () => { },
     logout = async () => {
-      setAccount(null);
+      setAccount("");
       setButtonText("Connect Wallet");
     };
 
@@ -70,7 +81,7 @@ function App() {
       <Sidebar />
       <div className="mainSection">
         <Title />
-        <Main account={account} getBalance={getBal} balance={balance} />
+        <Main createLottery={createLottery} account={account} getOwner={getOwner} owner={owner} />
         <ConnectWallet
           account={account}
           logout={logout}

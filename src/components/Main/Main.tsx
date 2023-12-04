@@ -4,12 +4,13 @@ import { Participant } from "./Participant/Participant";
 import "./Main.css";
 
 interface MainProps {
-  account: null;
-  getBalance: () => Promise<void>;
-  balance: null;
+  createLottery: () => Promise<void>;
+  account: string;
+  getOwner: () => Promise<void>;
+  owner: string;
 }
 
-const Main = ({ account, getBalance, balance }: MainProps) => {
+const Main = ({ createLottery, account, getOwner, owner }: MainProps) => {
   const log = () => {
     console.log(account);
     console.log(typeof account);
@@ -25,7 +26,7 @@ const Main = ({ account, getBalance, balance }: MainProps) => {
           className="flex tab-title border-b border-gray-600 shrink-0"
           aria-label="Interact with Ethers.js"
         >
-          {account === "0x49f2451abee35b261bb01f9d0cdc49f8f8df6e3f" ? (
+          {account.toUpperCase() === "0x49f2451abee35b261bb01f9d0cdc49f8f8df6e3f".toUpperCase() ? (
             <Tabs.Trigger
               id="Create"
               className="bg-white px-5 h-[45px] flex-1 flex items-center justify-center text-[15px] leading-none text-gray-700 select-none first:rounded-tl-md last:rounded-tr-md hover:text-purple-700 data-[state=active]:text-purple-700 data-[state=active]:shadow-[inset_0_-1px_0_0,0_1px_0_0] data-[state=active]:shadow-current data-[state=active]:focus:relative data-[state=active]:focus:shadow-[0_0_0_2px] data-[state=active]:focus:shadow-black outline-none cursor-default"
@@ -45,12 +46,12 @@ const Main = ({ account, getBalance, balance }: MainProps) => {
           </Tabs.Trigger>
         </Tabs.List>
 
-        {account === "0x49f2451abee35b261bb01f9d0cdc49f8f8df6e3f" ? (
+        {account.toUpperCase() === "0x49f2451abee35b261bb01f9d0cdc49f8f8df6e3f".toUpperCase() ? (
           <Tabs.Content
             className="grow  p-5 bg-white rounded-b-md outline-none focus:shadow-[0_0_0_2px] focus:shadow-black"
             value="tab1"
           >
-            <CreateLottery />
+            <CreateLottery createLottery={createLottery} />
           </Tabs.Content>
         ) : null}
 
@@ -60,8 +61,8 @@ const Main = ({ account, getBalance, balance }: MainProps) => {
         >
           <Participant
             account={account}
-            getBalance={getBalance}
-            balance={balance}
+            getOwner={getOwner}
+            owner={owner}
           />
         </Tabs.Content>
       </Tabs.Root>

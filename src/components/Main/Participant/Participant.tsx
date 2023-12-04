@@ -1,10 +1,10 @@
 interface ParticipantProps {
-  account: null;
-  getBalance: () => Promise<void>;
-  balance: null;
+  account: string;
+  getOwner: () => Promise<void>;
+  owner: string;
 }
 
-const Participant = ({ account, getBalance, balance }: ParticipantProps) => {
+const Participant = ({ account, getOwner, owner }: ParticipantProps) => {
   return (
     <div>
       <h4>{account}</h4>
@@ -14,8 +14,8 @@ const Participant = ({ account, getBalance, balance }: ParticipantProps) => {
       </form>
 
       <div>
-        <pre id="val">{balance}</pre>
-        <button onClick={getBalance}>get balance</button>
+        <pre id="val">{owner}</pre>
+        <button onClick={getOwner}>get owner</button>
       </div>
     </div>
   );

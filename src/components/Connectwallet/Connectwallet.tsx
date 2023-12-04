@@ -4,7 +4,7 @@ interface ConnectWalletProps {
   connectWallet: () => Promise<void>;
   logout: () => Promise<void>;
   buttonText: string;
-  account: null;
+  account: string;
 }
 
 const ConnectWallet = ({
