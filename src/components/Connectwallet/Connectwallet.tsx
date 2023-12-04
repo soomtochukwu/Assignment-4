@@ -15,28 +15,29 @@ const ConnectWallet = ({
 }: ConnectWalletProps) => {
   return (
     <div className="connectWallet">
-      {!account ?
+      {!account ? (
         <button
           onClick={connectWallet}
-          className="connectWallet button px-5 py-3 text-white bg-blue-500 rounded-md"
+          className="connectWallet button connect px-5 py-3 text-white bg-blue-500 rounded-md"
         >
           {buttonText}
         </button>
-        :
+      ) : (
         <a
           title="view on explorer (sepolia.etherscan.io)"
           href={"https://sepolia.etherscan.io/address/" + account}
           target="account"
           onClick={connectWallet}
-          className="connectWallet button px-5 py-3 text-white bg-blue-500 rounded-md"
+          className="connectWallet button connect px-5 py-3 text-white bg-blue-500 rounded-md"
         >
           {buttonText}
-        </a>}
+        </a>
+      )}
 
       {account ? (
         <button
           onClick={logout}
-          className="connectWallet button px-5 py-3 text-white bg-blue-500 rounded-md"
+          className="connectWallet button disconnect px-5 py-3 text-white bg-blue-500 rounded-md"
         >
           disconnect
         </button>
