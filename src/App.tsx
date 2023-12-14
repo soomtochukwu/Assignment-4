@@ -21,7 +21,7 @@ function App() {
     [Lottery_noOfPart, setLottery_noOfPart] = useState(""),
     /* connect wallet */
     connect = async () => {
-      let signer: ethers.JsonRpcProvider, provider, account;
+      let signer: ethers.Signer , provider, account;
       // @ts-ignore
       if (window.ethereum == null) {
         alert("MetaMask not installed; using read-only defaults");
